@@ -3,6 +3,8 @@ import { ec as EC } from 'elliptic';
 
 const ec = new EC('secp256k1');
 
+export type KoriKeyPair = EC.KeyPair;
+
 export interface KoriKeysOptions {
   passphrase: string;
   mnemonic?: string;
@@ -10,7 +12,7 @@ export interface KoriKeysOptions {
 
 export interface KoriKeys {
   mnemonic: string;
-  keyPair: EC.KeyPair;
+  keyPair: KoriKeyPair;
   address: string;
 }
 
